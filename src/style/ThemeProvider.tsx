@@ -1,10 +1,12 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import { config } from '.'
 import { containerTheme } from './components/container'
 import '@fontsource/roboto';
 
 const theme = extendTheme({
-  config,
+  config: {
+    initialColorMode: "light",
+    useSystemColorMode: true,
+  },
   fonts: {
     heading: "Roboto",
     body: "Roboto"
