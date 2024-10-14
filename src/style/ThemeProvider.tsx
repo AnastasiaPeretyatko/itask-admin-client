@@ -2,6 +2,7 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { containerTheme } from './components/container'
 import '@fontsource/roboto'
 import { buttonTheme } from './components/button'
+import { headingTheme } from './components/heading'
 
 const theme = extendTheme({
   config: {
@@ -39,6 +40,7 @@ const theme = extendTheme({
   components: {
     Container: containerTheme,
     Button: buttonTheme,
+    Heading: headingTheme
   },
 })
 

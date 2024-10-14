@@ -5,21 +5,24 @@ import {
 } from '@chakra-ui/react'
 
 // define the base component styles
-const baseStyle = {
-  borderRadius: 'xl',
-  fontWeight: 'medium',
-  borderColor: 'red',
-  border: '1px solid',
-}
+const baseStyle = defineStyle(() => {
+  return {
+    padding: 0,
+    maxW: 'unset',
+    width: 'unset'
+  }
+})
 
 const viewDate = defineStyle((props: StyleFunctionProps) => {
   return {
     borderRadius: '5px',
     backgroundColor: 'BLACK_400',
     color: 'white',
-    padding: '1px 5px',
+    fontSize: 'sm',
+    // padding: '1px 5px',
     margin: 0,
     width: 'min-content',
+    height: '100%',
     whiteSpace: 'nowrap',
   }
 })
@@ -29,11 +32,12 @@ const header = defineStyle((props: StyleFunctionProps) => {
     display: 'flex',
     flexDir: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     gap: '20px',
-    minW: '100vw',
-    justifyContent: 'end',
-    padding: '10px',
-    margin: 0,
+    paddingY: '10px',
+    marginX: '10px',
+    borderBottom: '1px solid',
+    borderColor: 'whiteAlpha.200',
   }
 })
 
@@ -51,5 +55,6 @@ const boxTheme = defineStyle(props => {
 })
 
 export const containerTheme = defineStyleConfig({
+  baseStyle,
   variants: { header, viewDate, boxTheme },
 })
