@@ -19,9 +19,10 @@ const SwitchTheme = () => {
   const { colorMode, setColorMode } = useColorMode()
 
   return (
-    <Container variant={"boxTheme"}>
+    <Container variant={'boxTheme'}>
       {buttonTheme.map(theme => (
         <Button
+          size={'xs'}
           variant={'switchTheme'}
           isActive={colorMode === theme.value}
           onClick={() => setColorMode(theme.value)}
