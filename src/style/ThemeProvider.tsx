@@ -1,19 +1,24 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { containerTheme } from './components/container'
-import '@fontsource/roboto';
+import '@fontsource/roboto'
+import { buttonTheme } from './components/button'
 
 const theme = extendTheme({
   config: {
-    initialColorMode: "light",
+    initialColorMode: 'light',
     useSystemColorMode: true,
   },
   fonts: {
-    heading: "Roboto",
-    body: "Roboto"
+    heading: 'Roboto',
+    body: 'Roboto',
   },
   styles: {},
-  semanticToken: {
-
+  semanticTokens: {
+    colors: {
+      background: {
+        switch: { _dark: 'whiteAlpha.50', _light: 'blackAlpha.100' },
+      },
+    },
   },
   colors: {
     PRIMARY_BLUE: '#2A85FF',
@@ -33,6 +38,7 @@ const theme = extendTheme({
   },
   components: {
     Container: containerTheme,
+    Button: buttonTheme,
   },
 })
 

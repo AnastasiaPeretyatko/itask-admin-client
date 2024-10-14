@@ -1,19 +1,15 @@
-import { BellIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
-import { Avatar, Button, Container, Flex, HStack, useColorMode } from '@chakra-ui/react'
+import { BellIcon } from '@chakra-ui/icons'
+import { Avatar, Container } from '@chakra-ui/react'
 import moment from 'moment'
-import React, { useState } from 'react'
+import SwitchTheme from '../SwitchTheme'
 
 const Header = () => {
-  // const [theme, setTheme] = useState()
-  const {colorMode, toggleColorMode} = useColorMode()
   return (
-    <Container variant={"header"}>
-      <Button onClick={() => toggleColorMode()}>
-        {colorMode === 'dark' ? <SunIcon/> : <MoonIcon/>}
-      </Button>
-      <BellIcon boxSize={6}/>
-      <Container variant={"viewDate"}>{moment().format('ll')}</Container>
-      <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+    <Container variant={'header'}>
+      <SwitchTheme />
+      <BellIcon boxSize={6} />
+      <Container variant={'viewDate'}>{moment().format('ll')}</Container>
+      <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
     </Container>
   )
 }
